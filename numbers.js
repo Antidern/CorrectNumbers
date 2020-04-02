@@ -66,4 +66,6 @@ jQuery(function(){
             x++;
         }  
     }
+    let str1 = numbers.join(' ');
+    document.getElementById("fff").innerHTML = ('новое содержание: '+ str1);
 });
