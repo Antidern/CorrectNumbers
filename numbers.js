@@ -40,4 +40,30 @@ jQuery(function(){
     test2 = test2.replace(/  /ig, " ");
     let arr = test2.split(' ');
     console.log(arr);
+    let N=0; 
+    let x=0; 
+    let numbers=[];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (!isNaN (arr[i])) {
+            let n1 = parseInt(arr[i]);
+            if (!isNaN(arr[i+1]) ) {
+                let n2 = parseInt(arr[i+1]);
+                if((n1 - n2) >= 991) { 
+                    N += n1;
+                } else if (n1 > n2) {
+                    arr[i+1] = n2 + n1;
+                } else if(n1 < n2) {
+                    arr[i+1] = n1 * n2;
+                }  
+            } else { 
+                numbers[x] = n1 + N;
+                x++;
+                N=0;
+            }
+        } else { /* для записи в новый массив нечисловых значений*/
+            numbers[x] = arr[i];
+            x++;
+        }  
+    }
 });
