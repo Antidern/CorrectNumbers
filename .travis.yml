@@ -1,16 +1,22 @@
-language: js
+language: node_js
 
-mono: none
+sudo: false
 
-dotnet: 2.0.3
+node_js:
+- node
 
-# script:
+# mono: none
 
-# - dotnet restore TextCensoring.csproj
+# dotnet: 2.0.3
+install:
+- npm ci
+
+script:
+- npm test
 
 notifications:
   email:
     recipients:
       - dmitidern@mail.ru
-    on_success: never # default: change
-    on_failure: always # default: always
+    on_success: never 
+    on_failure: always 
